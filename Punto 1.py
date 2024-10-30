@@ -16,7 +16,7 @@ for i in range(num):
   b = other
 
 
-#Creamos una función recursiva para calcular el mcd de los números ingresados
+#Creamos una función iterativa para calcular el mcd de los números ingresados
 def mcd_iteracion (a, b, other):  
   while b:
     a, b = b, (a % b)
@@ -25,7 +25,6 @@ def mcd_iteracion (a, b, other):
   else:
     return mcd_iteracion(a, other, b)
 
-# Call mcd_iteracion after the loop
 resultado = mcd_iteracion(a, b, other) 
 print(f"El valor del mcd iterativo es: {resultado}")
 
