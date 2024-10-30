@@ -7,25 +7,24 @@ print("Bienvenido, te ayudaremos a calcular el mcd de los valores que desees ing
 #Declaramos las variables a, b, num.
 a = int(input("Ingrese el primer valor: "))
 b = int(input("Ingrese el segundo valor: "))
-num = int(input("Ingrese el número de datos adicionales: "))
-other = 0
-
-for i in range(num):
-  other = int(input("Ingrese el número: "))
-  a = b
-  b = other
-
-
-#Creamos una función iterativa para calcular el mcd de los números ingresados
-def mcd_iteracion (a, b, other):  
+num = 0
+while True:
+  other = int(input("Ingrese otro valor (0 para terminar): "))
+  if other == 0:
+    break
+  else:
+    num = other
+#Creamos una función recursiva para calcular el mcd de los números ingresados
+def mcd_iteracion (a, b, num):  
   while b:
     a, b = b, (a % b)
   if not other:
     return a
   else:
-    return mcd_iteracion(a, other, b)
+    return mcd_iteracion(a, num, b)
 
-resultado = mcd_iteracion(a, b, other) 
+# Call mcd_iteracion after the loop
+resultado = mcd_iteracion(a, b, num) 
 print(f"El valor del mcd iterativo es: {resultado}")
 
 #Creamos una función recursiva para calcular el mcd del primer y el segundo valor ingresado
